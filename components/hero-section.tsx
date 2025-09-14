@@ -6,18 +6,6 @@ import Image from "next/image"
 import { WalletConnect } from "@/components/wallet-connect"
 
 export function HeroSection() {
-  const scrollToPresale = () => {
-    console.log("[v0] Mint button clicked - attempting to scroll")
-    const presaleSection = document.getElementById("presale-section")
-    console.log("[v0] Found presale section:", !!presaleSection)
-    if (presaleSection) {
-      console.log("[v0] Scrolling to presale section")
-      presaleSection.scrollIntoView({ behavior: "smooth" })
-    } else {
-      console.log("[v0] Presale section not found!")
-    }
-  }
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute top-6 left-6 z-20 flex gap-3">
@@ -95,7 +83,9 @@ export function HeroSection() {
             CA: 0xaC21D9e8A92718987D10e60B3e97779A0542acCE
           </p>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-2 text-balance">The First Ape on X Layer Chain</p>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-2 text-balance">
+            The First Ape on X Layer Chain
+          </p>
 
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto text-pretty">
             Born on X Layer blockchain platform, XFEG is the first ape born to disrupt meme coins on the X Layer chain.
@@ -104,15 +94,20 @@ export function HeroSection() {
 
           {/* Action buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-lg px-8 py-6 border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-              onClick={scrollToPresale} // Added click handler to scroll to presale section
+            <a
+              href="https://potatoswap.finance/swap?outputCurrency=0xaC21D9e8A92718987D10e60B3e97779A0542acCE"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <Coins className="mr-2 h-5 w-5" /> {/* Changed icon from Download to Coins */}
-              Mint {/* Changed text from "Get OKAT Memes" to "Mint" */}
-            </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-lg px-8 py-6 border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+              >
+                <Coins className="mr-2 h-5 w-5" />
+                BUY
+              </Button>
+            </a>
           </div>
 
           {/* Stats */}
