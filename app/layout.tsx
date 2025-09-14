@@ -9,10 +9,10 @@ import { MeteorShower } from "@/components/meteor-shower"
 import { WalletProvider } from "@/contexts/wallet-context"
 
 export const metadata: Metadata = {
-  title: "XFEG - The First Ape on X Layer", // Updated title for XFEG ape branding
+  title: "XFEG", // Updated title for XFEG ape branding
   description:
     "The official home of XFEG, the first ape on X Layer chain born to disrupt meme coins. Share, create, and explore the best ape memes!", // Updated description for XFEG ape theme
-  generator: "v0.app",
+  generator: "XFEG",
 }
 
 export default function RootLayout({
@@ -22,6 +22,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+      </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         <WalletProvider>
           <MeteorShower />
